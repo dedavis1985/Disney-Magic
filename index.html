@@ -249,4 +249,8 @@ let issued=new Set((r.bonuses||[]).map(b=>b.issuer));if(issued.size<2){h+=`<div 
 h+=`<div class="panel"><h3>Ready for more magic?</h3><p>Rematch saves this round and draws five more challenges. Today's and lifetime points stay intact.</p><div class="show-actions"><button class="btn secondary" onclick="rematchShowdown()">🔄 Rematch!</button><button class="btn" onclick="endShowdown()">🏆 End Disney Day</button></div><p class="note">You can close this app at any time and continue your current round later. A new calendar day won't reset it automatically.</p></div>`}
 let hist=s.history.slice().reverse();let wins={mom:0,nicholas:0,tie:0};s.history.forEach(v=>{let t=showTotals(v.rounds);wins[t.mom===t.nicholas?'tie':t.mom>t.nicholas?'mom':'nicholas']++});h+=`<div class="panel"><h3>🏅 ${test?'TEST Hall of Fame':'Showdown Hall of Fame'}</h3><div class="statgrid"><div class="stat"><b>${wins.mom}</b><small>Mom's wins</small></div><div class="stat"><b>${wins.nicholas}</b><small>Nicholas's wins</small></div><div class="stat"><b>${wins.tie}</b><small>Tied days</small></div></div><p class="note">Each archived Disney day includes every round and a challenge report card.</p></div>`;h+=hist.length?hist.map(showReport).join(''):`<div class="panel"><p>Your first report card will appear here when you finish a Disney day. ✨</p></div>`;return h}
 
-</script></body></html>
+</script>
+
+<script src="Disney_Daydream_Generator.js"></script>
+
+</body></html>
